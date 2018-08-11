@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     public Text text;
+    int score = 0;
+    string str;
+    public GameObject EnemyHit;
 
     private Animator animator;
 
-
-    // Initializes player animations
+    // Initialize player animation
     void Start()
     {
         animator = this.GetComponent<Animator>();
     }
 
-    // Allows player movement with animations
+
     void Update()
     {
         if (Input.GetKey(KeyCode.A))
@@ -40,14 +42,24 @@ public class PlayerController : MonoBehaviour {
             animator.SetInteger("Direction", 2);
             transform.Translate(-Vector2.up * 4 * Time.deltaTime);
         }
+        str = score.ToString();
+        text.text = str;
     }
 
     public void PizzaPickup()
     {
-        int pizzas = 5; int score = 0;  string str = score.ToString();
+        int pizzas = 5; 
         
         score += pizzas;
         text.text = str;
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.name == "")
+        {
+
+        }
     }
     
 }

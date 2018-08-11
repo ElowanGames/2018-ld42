@@ -37,20 +37,14 @@ public class Enemy : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject == player)
-        {
-            print("Enemy destroyed");
-            Destroy(this);
-        }
+        print("Enemy destroyed");
+        Destroy(this);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision == player)
-        {
-            AttackPlayer();
-        }
-    }
+     void OnTriggerEnter2D(Collider2D collision)
+     {
+        AttackPlayer();
+     }
 
     private void AttackPlayer()
     {

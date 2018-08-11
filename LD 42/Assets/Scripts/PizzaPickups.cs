@@ -11,16 +11,13 @@ public class PizzaPickups : MonoBehaviour {
 	}
 	
 	void Update () {
-		
-	}
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == player)
-        {
-            player.GetComponent<PlayerController>().PizzaPickup();
-            Destroy(gameObject);
-        }
+        player.GetComponent<PlayerController>().PizzaPickup();
+        Destroy(gameObject);
     }
 
 }

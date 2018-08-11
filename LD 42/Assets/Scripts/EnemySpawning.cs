@@ -9,8 +9,8 @@ public class EnemySpawning : MonoBehaviour {
     public float WaveSpawnRate;
 
     public GameObject[] Houses;
-    public Enemy enemy;
     public GameObject[] PlacesToSpawn;
+    public Enemy enemy;
 
     void Start () {
         
