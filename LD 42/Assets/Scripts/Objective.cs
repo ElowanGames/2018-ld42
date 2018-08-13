@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Objective : MonoBehaviour {
 
-    private Enemy enemy;
     private PlayerController player;
+    private dialogue dial;
 
     private void Start()
     {
-        enemy = FindObjectOfType<Enemy>();
         player = FindObjectOfType<PlayerController>();
+        dial = FindObjectOfType<dialogue>();
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        
+        dial.GetComponent<dialogue>().SayStuff();
         player.GetComponent<PlayerController>().PizzaDropoff();
     }
 

@@ -40,7 +40,6 @@ public class TheWaveMaker : MonoBehaviour
 
     void Update()
     {
-        print(state);
         if (state == SpawnState.WAITING)
         {
             if (!EnemyIsAlive())
@@ -92,7 +91,7 @@ public class TheWaveMaker : MonoBehaviour
         if (searchCountDown <= 0f)
         {
             searchCountDown = 1f;
-            if (GameObject.FindGameObjectsWithTag("EnemyHit").Length == 1)
+            if (GameObject.FindGameObjectsWithTag("EnemyHit").Length == 2)
             {
                 return false;
             }

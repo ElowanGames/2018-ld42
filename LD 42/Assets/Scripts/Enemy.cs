@@ -5,33 +5,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     private Rigidbody2D rb;
-    private HouseIsReady[] houseIsReady;
     private PlayerController player;
     private Animator animator;
 
     public GameObject pizzapizza;
     public float MoveSpeed;
     public GameObject target;
+    public GameObject[] Objective;
+    public AudioClip DeathSound;
 
     private void Start()
     {
+        target = this.target;
         player = FindObjectOfType<PlayerController>();
-        houseIsReady = FindObjectsOfType<HouseIsReady>();
         animator = this.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
     }
     
     private void Update()
     {
-        //checks every house GamObject for if they are ready
-        for (int i = 0; i < houseIsReady.Length; i++)
-        {
-            if (houseIsReady[i].name == "ReadyHouse")
-            {
-                this.target = houseIsReady[i].gameObject;
-            }
-        }
-
+        
         transform.position = Vector2.MoveTowards(transform.position, this.target.transform.position, MoveSpeed * Time.deltaTime);
 
         Vector2 me = transform.position;
@@ -52,6 +45,7 @@ public class Enemy : MonoBehaviour {
         {
             gameObject.transform.Rotate(0, 0, 90);
         }
+        AudioSource.PlayClipAtPoint(DeathSound, gameObject.transform.position);
         animator.SetBool("is_dead", true);
         print("Enemy destroyed");
         Transform childed = transform.GetChild(0);

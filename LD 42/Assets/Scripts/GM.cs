@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GM : MonoBehaviour{
 
-    public AudioSource song01;
-    public AudioSource song02;
+    public AudioClip song01;
+    public AudioClip song02;
+    public AudioSource song03;
+    public float WaitTime;
 
     static GM instance = null;
+
+    Scene currentScene;
+
 
     private void Awake()
     {
@@ -20,13 +25,12 @@ public class GM : MonoBehaviour{
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         StartCoroutine(LoopSong());
     }
 
@@ -47,13 +51,40 @@ public class GM : MonoBehaviour{
         Application.Quit();
     }
 
+    private void Update()
+    {
+        
+    }
+
+    void StopAllAudio()
+    {
+        AudioSource[] allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Stop();
+        }
+    }
+
     IEnumerator LoopSong()
     {
+        string sceneName = currentScene.name;
         Start:
-        song01.Play();
-        yield return new WaitForSeconds(88.248f);
-        song02.Play();
-        yield return new WaitForSeconds(88.248f);
+        //if (sceneName == "Menu" || sceneName == "GameOver")
+        //{
+        //    StopAllAudio();
+        //    print("this part works");
+        //    yield break;
+        //}
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            song03.Play();
+            yield return new WaitForSeconds(15.351f);
+        }
+        AudioSource.PlayClipAtPoint(song01, gameObject.transform.position, 1);
+        yield return new WaitForSeconds(WaitTime);
+        AudioSource.PlayClipAtPoint(song02, gameObject.transform.position, 1);
+        yield return new WaitForSeconds(WaitTime);
         goto Start;
     }
 

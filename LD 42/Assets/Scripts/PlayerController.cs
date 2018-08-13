@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        float Slowdown = 0;
+        Slowdown -= .1f * PizzaScore;
         animator.SetBool("is_walking", false);
 
         if (Input.GetKey(KeyCode.A))
@@ -33,14 +35,14 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("is_walking", true);
             animator.SetFloat("input_X", -1);
             animator.SetFloat("input_Y", 0);
-            transform.Translate(-Vector2.right * 8 * Time.deltaTime);
+            transform.Translate(-Vector2.right * (8 - Slowdown) * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             animator.SetBool("is_walking", true);
             animator.SetFloat("input_X", 1);
             animator.SetFloat("input_Y", 0);
-            transform.Translate(Vector2.right * 8 * Time.deltaTime);
+            transform.Translate(Vector2.right * (8 - Slowdown) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -48,14 +50,14 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("is_walking", true);
             animator.SetFloat("input_X", 0);
             animator.SetFloat("input_Y", 1);
-            transform.Translate(Vector2.up * 8 * Time.deltaTime);
+            transform.Translate(Vector2.up * (8 - Slowdown) * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             animator.SetBool("is_walking", true);
             animator.SetFloat("input_X", 0);
             animator.SetFloat("input_Y", -1);
-            transform.Translate(-Vector2.up * 8 * Time.deltaTime);
+            transform.Translate(-Vector2.up * (8 - Slowdown) * Time.deltaTime);
         }
         
 
@@ -78,11 +80,6 @@ public class PlayerController : MonoBehaviour {
         ScoreText.text = score.ToString();
         PizzaScore = 0;
 
-    }
-
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        
     }
     
 }
