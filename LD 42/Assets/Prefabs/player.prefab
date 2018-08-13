@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212931217942450328}
   - component: {fileID: 114211939592499936}
   - component: {fileID: 61618143687187790}
-  - component: {fileID: 50851439217015262}
-  - component: {fileID: 95141045602055022}
+  - component: {fileID: 50641975658631904}
+  - component: {fileID: 95700787172315170}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -44,7 +44,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50851439217015262
+--- !u!50 &50641975658631904
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -89,7 +89,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47190237, y: 0.6299819}
   m_EdgeRadius: 0
---- !u!95 &95141045602055022
+--- !u!95 &95700787172315170
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -118,8 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba580b5b139005d4cb60544e71cdbcfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  score: 0
   EnemyHit: {fileID: 0}
+  PizzaText: {fileID: 0}
+  ScoreText: {fileID: 0}
 --- !u!212 &212931217942450328
 SpriteRenderer:
   m_ObjectHideFlags: 1
