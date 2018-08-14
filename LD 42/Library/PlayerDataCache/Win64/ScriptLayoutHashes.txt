@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Angela/Documents/GitHub/ld42/YouWannaPizzaMe_Windows_1.0/You Wanna Pizza Me?.exe
+C:/Users/Angela/Documents/GitHub/ld42/YouWannaPizzaMe_Linux_1.1/You Wanna Pizza Me.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Exposition.unity

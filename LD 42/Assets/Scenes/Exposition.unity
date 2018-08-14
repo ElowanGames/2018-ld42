@@ -1612,8 +1612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 89}
-  m_SizeDelta: {x: 620, y: 240}
+  m_AnchoredPosition: {x: -35, y: 100}
+  m_SizeDelta: {x: 650, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643502698
 MonoBehaviour:
@@ -1649,8 +1649,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "In the year 2042,  people only eat pizza.\r\nToday,  everyone orders pizza
     from a general hotline,\nand companies compete to deliver first. \r\nYou are Cheezus,
-    \ a pizza spy who must stop your opponents,  steal their deliveries,  and collect
-    their tips!\nDon't let them deliver any pizzas!"
+    \ a pizza spy,  who must prevent your opponents from delivering any pizzas!\nDeliver
+    pizzas to houses to increase your score."
 --- !u!222 &1643502699
 CanvasRenderer:
   m_ObjectHideFlags: 0

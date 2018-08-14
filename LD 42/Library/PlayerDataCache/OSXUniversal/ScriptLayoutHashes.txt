@@ -1,6 +1,6 @@
 OSXStandalone
 PlayerPath?
-C:/Users/Angela/Documents/GitHub/ld42/YouWannaPizzaMe_Mac_1.0.app
+C:/Users/Angela/Documents/GitHub/ld42/YouWannaPizzaMe_Mac_1.1.app
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Exposition.unity
